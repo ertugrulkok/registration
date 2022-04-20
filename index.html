@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" id="container">
+       
+         <div id="left_section" class="left_section">
+        <div class="form-container sign-in-container">
+          <form id="left_form" action="#">
+            <h1>FILL THE FORM!</h1>
+            <input type="text" placeholder="Name" id="name"/>
+            <input type="text" placeholder="Surname" id="sirname"/>
+            <input type="text" placeholder="Place of birth" id="place" />
+            <input type="text" placeholder="Year of birth" id="year"/>
+            <input type="text" placeholder="Name of city lived" id="city" />
+            <button onclick="newUser()">Submit</button>
+          </form>
+          <img class="right" id="right" src="./right.png" alt="">
+        </div>
+    </div>
+        <div class="overlay-container">
+          <div class="overlay">
+         
+            <div  class="overlay-panel overlay-right">
+              
+                <div id="hello_panel">
+              
+              <p id="text">Enter your personal details and start journey with us</p>
+              <img id="left" class="left" src="./left.png" alt="">
+          
+                </div>
+
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+
+
+function User(name, sirname, city, year, place) {
+  this.name = name;
+  this.sirname = sirname;
+  this.city = city;
+  this.year =year;
+  this.place=place;
+
+
+}
+
+          
+function newUser() {
+var name = document.getElementById("name").value;
+var sirName = document.getElementById("sirname").value;
+var placeofBirth= document.getElementById("place").value;
+var yearofBirth= document.getElementById("year").value;
+var nameofCity= document.getElementById("city").value;
+var show = document.getElementById("hello_panel")
+var pht = document.getElementById("right")
+var leftForm = document.getElementById("left_form")
+var pht1 = document.getElementById("left")
+
+
+
+
+const creatingUser = new User(name, sirName, placeofBirth, yearofBirth, nameofCity);
+
+text.innerHTML =
+"       "+ "CONGRATULATIONS!" +"  " + "" +"       "+"   "+ "You are registered as:"+" " + name +" "+ sirName +"."+ " "+
+"You were born in"+" " + placeofBirth +" " +"and in" +" " + yearofBirth + "." +" "+
+"You live right now in"+" " + nameofCity+"."+"Thank you so much. Please keep staying with us. Have a nice day..."  ; 
+
+
+
+leftForm.style.display="none"
+pht.style.display="block"
+pht1.style.display="none"
+console.log(creatingUser)
+
+
+
+
+}
+
+
+
+
+
+</script>
+      
+      
+</body>
+</html>
